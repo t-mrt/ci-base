@@ -31,7 +31,9 @@ ENV GOROOT /root/local/go-1.13.3
 RUN curl -sLO https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
     pip --version && \
-    pip install awscli --upgrade
+    pip install awscli --upgrade && \
+    rm get-pip.py && \
+    rm -rf /root/.cache
 
 RUN npm install -g yarn@1.19.1
 
